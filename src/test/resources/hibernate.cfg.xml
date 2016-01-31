@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://localhost/dlx</property>
+        <property name="connection.username">dlx</property>
+        <property name="connection.password">dlx</property>
+
+        <!-- JDBC connection pool (use the built-in connection pool) -->
+        <property name="connection.pool_size">1</property>
+        <property name="dialect">tools.dlx.pgsearch.Dialect</property>
+        <property name="current_session_context_class">thread</property>
+
+        <property name="show_sql">true</property>
+        <property name="use_sql_comments">false</property>
+
+        <property name="hbm2ddl.auto">update</property>
+
+        <mapping class="tools.dlx.pgsearch.util.AddressEntity"/>
+        <mapping class="tools.dlx.pgsearch.util.ClientEntity"/>
+    </session-factory>
+</hibernate-configuration>
