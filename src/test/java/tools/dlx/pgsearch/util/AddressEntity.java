@@ -16,7 +16,6 @@ public class AddressEntity {
     @Column String country;
     @Column Long zipCode;
 
-    @Column(updatable = false, insertable = false)
     @Formula("addressLine || coalesce(city, '') || coalesce(country, '') || coalesce(zipCode, 0)")
     String document;
 
