@@ -28,7 +28,7 @@ public class Post {
     @Id Integer id;
     @Column String title;
     @Column String content;
-    @Formula("title || coalesce(content, '')")
+    @Formula("title || ' ' || coalesce(content, '')")
     String document;
 ```
 
